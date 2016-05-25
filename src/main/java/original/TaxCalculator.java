@@ -33,71 +33,35 @@ public class TaxCalculator
 
     public TaxCalculator(double podstawa, char typUmowy)
     {
-        try
-        {
-            podstawaWymiaruSkladek = podstawa;
-            this.typUmowy = typUmowy;
-
-        } catch (Exception ex)
-        {
-            System.out.println("Błędna kwota");
-            System.err.println(ex);
-            return;
-        }
+        podstawaWymiaruSkladek = podstawa;
+        this.typUmowy = typUmowy;
 
         DecimalFormat df00 = new DecimalFormat("#.00");
         DecimalFormat df = new DecimalFormat("#");
 
-        if (typUmowy == 'P')
-        {
-            podstawaSkladkiZdrowotnej = obliczonaPodstawa(podstawaWymiaruSkladek);
-            obliczUbezpieczenia(podstawaSkladkiZdrowotnej);
-            podstawaOpodatkowania = podstawaSkladkiZdrowotnej - kosztyUzyskania;
-            podstawaOpodatkowania_zaokraglone = Double
-                    .parseDouble(df.format(podstawaOpodatkowania));
-            obliczPodatek(podstawaOpodatkowania_zaokraglone);
-        } else if (typUmowy == 'Z')
-        {
-            podstawaOpodatkowania = obliczonaPodstawa(podstawaWymiaruSkladek);
-            obliczUbezpieczenia(podstawaOpodatkowania);
-            kwotaZmiejszajacaPodatek = 0;
-            kosztyUzyskania = (podstawaOpodatkowania * 20) / 100;
-            podstawaOpodatkowania = podstawaOpodatkowania - kosztyUzyskania;
-            podstawaOpodatkowania_zaokraglone = Double.parseDouble(df.format(podstawaOpodatkowania));
-            obliczPodatek(podstawaOpodatkowania);
-        } else
-        {
-            System.out.println("Nieznany typ umowy!");
-        }
-        podatekPotracony = zaliczkaNaPodatekDochodowy - kwotaZmiejszajacaPodatek;
-        obliczZaliczke();
-        zaliczkaDoUrzeduSkarbowegoFormatted = Double.parseDouble(df.format(zaliczkaDoUrzeduSkarbowego));
-        wynagrodzenie = podstawaWymiaruSkladek
-                - ((skladkaEmerytalna + skladkaRentowa + skladkaChorobowa) + skladkaZdrowotna1 + zaliczkaDoUrzeduSkarbowegoFormatted);
-    }
-
-    public void obliczZaliczke()
-    {
-        zaliczkaDoUrzeduSkarbowego = zaliczkaNaPodatekDochodowy - skladkaZdrowotna2 - kwotaZmiejszajacaPodatek;
-    }
-
-    public void obliczPodatek(double podstawa)
-    {
-        zaliczkaNaPodatekDochodowy = (podstawa * 18) / 100;
-    }
-
-    public double obliczonaPodstawa(double podstawa)
-    {
         skladkaEmerytalna = (podstawa * 9.76) / 100;
         skladkaRentowa = (podstawa * 1.5) / 100;
         skladkaChorobowa = (podstawa * 2.45) / 100;
-        return (podstawa - skladkaEmerytalna - skladkaRentowa - skladkaChorobowa);
-    }
-
-    public void obliczUbezpieczenia(double podstawa)
-    {
-        skladkaZdrowotna1 = (podstawa * 9) / 100;
-        skladkaZdrowotna2 = (podstawa * 7.75) / 100;
+        podstawaSkladkiZdrowotnej = (podstawa - skladkaEmerytalna - skladkaRentowa - skladkaChorobowa);
+        skladkaZdrowotna1 = (podstawaSkladkiZdrowotnej * 9) / 100;
+        skladkaZdrowotna2 = (podstawaSkladkiZdrowotnej * 7.75) / 100;
+        if (typUmowy == 'P')
+        {
+            podstawaOpodatkowania = podstawaSkladkiZdrowotnej - kosztyUzyskania;
+        } else if (typUmowy == 'Z')
+        {
+            kwotaZmiejszajacaPodatek = 0;
+            podstawaOpodatkowania = podstawaSkladkiZdrowotnej;
+            kosztyUzyskania = (podstawaOpodatkowania * 20) / 100;
+            podstawaOpodatkowania = podstawaOpodatkowania - kosztyUzyskania;
+        }
+        podstawaOpodatkowania_zaokraglone = Double.parseDouble(df.format(podstawaOpodatkowania));
+        zaliczkaNaPodatekDochodowy = (podstawaOpodatkowania_zaokraglone * 18) / 100;
+        podatekPotracony = zaliczkaNaPodatekDochodowy - kwotaZmiejszajacaPodatek;
+        zaliczkaDoUrzeduSkarbowego = zaliczkaNaPodatekDochodowy - skladkaZdrowotna2 - kwotaZmiejszajacaPodatek;
+        zaliczkaDoUrzeduSkarbowegoFormatted = Double.parseDouble(df.format(zaliczkaDoUrzeduSkarbowego));
+        wynagrodzenie = podstawaWymiaruSkladek
+                - ((skladkaEmerytalna + skladkaRentowa + skladkaChorobowa) + skladkaZdrowotna1 + zaliczkaDoUrzeduSkarbowegoFormatted);
     }
 }
 
