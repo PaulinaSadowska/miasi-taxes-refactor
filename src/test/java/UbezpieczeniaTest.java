@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class UbezpieczeniaTest
 {
+    private final double bias = 0.02;
 
     private final char typUmowy = 'P';
     private final double podstawaWymiaruSkladek = 3000;
@@ -31,32 +32,32 @@ public class UbezpieczeniaTest
     @Test
     public void ubezpieczenieEmerytalne()
     {
-        assertEquals(skladkaUbezpieczenieEmerytalne_oczekiwane, taxCalculator.skladkaEmerytalna, 0.01);
+        assertEquals(skladkaUbezpieczenieEmerytalne_oczekiwane, taxCalculator.skladkaEmerytalna, bias);
     }
 
     @Test
     public void ubezpieczenieRentowe()
     {
-        assertEquals(skladkaUbezpieczenieRentowe_oczekiwane, taxCalculator.skladkaRentowa, 0.01);
+        assertEquals(skladkaUbezpieczenieRentowe_oczekiwane, taxCalculator.skladkaRentowa, bias);
     }
 
     @Test
     public void ubezpieczenieChorobowe()
     {
-        assertEquals(skladkaUbezpieczenieChorobowe_oczekiwane, taxCalculator.skladkaChorobowa, 0.01);
+        assertEquals(skladkaUbezpieczenieChorobowe_oczekiwane, taxCalculator.skladkaChorobowa, bias);
     }
 
     @Test
     public void podstawaWymiaruSkladkiUbezpieczenieZdrowotne()
     {
-        assertEquals(podstawaSkladkiZdrowotnej_oczekiwane, taxCalculator.podstawaSkladkiZdrowotnej, 0.01);
+        assertEquals(podstawaSkladkiZdrowotnej_oczekiwane, taxCalculator.podstawaSkladkiZdrowotnej, bias);
     }
 
     @Test
     public void skladkiUbezpieczenieZdrowotne()
     {
-        assertEquals(skladkaUbezpieczenieZdrowotne_7_75procent_oczekiwane, taxCalculator.skladkaZdrowotna2, 0.01);
-        assertEquals(skladkaUbezpieczenieZdrowotne_9procent_oczekiwane, taxCalculator.skladkaZdrowotna1, 0.01);
+        assertEquals(skladkaUbezpieczenieZdrowotne_7_75procent_oczekiwane, taxCalculator.skladkaZdrowotna2, bias);
+        assertEquals(skladkaUbezpieczenieZdrowotne_9procent_oczekiwane, taxCalculator.skladkaZdrowotna1, bias);
     }
 
 }
