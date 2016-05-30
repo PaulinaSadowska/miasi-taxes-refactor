@@ -1,28 +1,111 @@
+import java.math.BigDecimal;
+
 /**
  * Created by Paulina Sadowska on 25.05.2016.
  */
 public class KalkulatorPodatkowy
 {
-    private double podstawaWymiaruSkladek = 0;
-    private char typUmowy = ' ';
-    // składki na ubezpieczenia społeczne
-    private double skladkaEmerytalna = 0; // 9,76% podstawyy
-    private double skladkaRentowa = 0; // 1,5% podstawy
-    private double skladkaChorobowa = 0; // 2,45% podstawy
-    // składki na ubezpieczenia zdrowotne
-    private double kosztyUzyskania = 111.25;
+    private static final BigDecimal skladkaEmarytalna_procent = new BigDecimal(0.0976);
+    private static final BigDecimal skladkaRentowa_procent = new BigDecimal(0.015);
+    private static final BigDecimal skladkaChorobowa_procent = new BigDecimal(0.0245);
+    private static final BigDecimal  skladkaZdrowotna_9procent = new BigDecimal(0.09);
+    private static final BigDecimal  skladkaZdrowotna_7_75procent = new BigDecimal(0.0775);
+    private static final BigDecimal  zaliczkaNaPodatekDochodowy_procent = new BigDecimal(0.18);
 
-    private double podstawaOpodatkowania;
-    private double podstawaOpodatkowania_zaokraglone;
 
-    private double skladkaZdrowotna1 = 0; // od podstawy wymiaru 9%
-    private double skladkaZdrowotna2 = 0; // od podstawy wymiaru 7,75 %
-    private double zaliczkaNaPodatekDochodowy = 0; // zaliczka na podatek dochodowy 18%
-    private double kwotaZmiejszajacaPodatek = 46.33; // kwota zmienjszająca podatek 46,33 PLN
-    private double podatekPotracony;
-    private double zaliczkaDoUrzeduSkarbowegoFormatted = 0;
-    private double zaliczkaDoUrzeduSkarbowego = 0;
+    private BigDecimal podstawa;
+    private TypUmowyStrategia typUmowyStrategia;
 
-    private double wynagrodzenie;
-    private double podstawaSkladkiZdrowotnej;
+    public KalkulatorPodatkowy(BigDecimal podstawa, TypUmowy typUmowy){
+        this.podstawa = podstawa;
+        if(typUmowy == TypUmowy.umowaOPrace) {
+            this.typUmowyStrategia = new UmowaOPrace();
+        }
+        else if(typUmowy == TypUmowy.umowaZlecenie){
+            this.typUmowyStrategia = new UmowaZlecenie();
+        }
+    }
+
+    public TypUmowy getTypUmowy()
+    {
+        return typUmowyStrategia.getTypUmowy();
+    }
+
+    public BigDecimal getWynagrodzenie()
+    {
+        return podstawa.subtract(getSkladkaEmerytalna()).subtract(getSkladkaRentowa()).subtract(getSkladkaChorobowa())
+                .subtract(getSkladkaZdrowotna_9()).subtract(getZaliczkaDoUrzeduSkarbowego());
+    }
+
+    public BigDecimal getPodstawaWymiaruSkladek()
+    {
+        return podstawa;
+    }
+
+    public BigDecimal getSkladkaEmerytalna()
+    {
+        return podstawa.multiply(skladkaEmarytalna_procent);
+    }
+
+    public BigDecimal getSkladkaRentowa()
+    {
+        return podstawa.multiply(skladkaRentowa_procent);
+    }
+
+    public BigDecimal getSkladkaChorobowa()
+    {
+        return podstawa.multiply(skladkaChorobowa_procent);
+    }
+
+    public BigDecimal getKosztyUzyskania()
+    {
+        return typUmowyStrategia.getKosztyUzyskania();
+    }
+
+    public BigDecimal getPodstawaOpodatkowania()
+    {
+        return typUmowyStrategia.getPodstawaOpodatkowania();
+    }
+
+    public BigDecimal getPodstawaOpodatkowania_zaokraglone()
+    {
+        return typUmowyStrategia.getPodstawaOpodatkowania_zaokraglone();
+    }
+
+    public BigDecimal getSkladkaZdrowotna_9()
+    {
+        return getPodstawaSkladkiZdrowotnej().multiply(skladkaZdrowotna_9procent);
+    }
+
+    public BigDecimal getSkladkaZdrowotna_7_75()
+    {
+        return getPodstawaSkladkiZdrowotnej().multiply(skladkaZdrowotna_7_75procent);
+    }
+
+    public BigDecimal getZaliczkaNaPodatekDochodowy()
+    {
+        return getPodstawaOpodatkowania_zaokraglone().multiply(zaliczkaNaPodatekDochodowy_procent);
+    }
+
+    public BigDecimal getKwotaZmiejszajacaPodatek()
+    {
+        return typUmowyStrategia.getKwotaZmiejszajacaPodatek();
+    }
+
+    public BigDecimal getPodatekPotracony()
+    {
+        return getZaliczkaNaPodatekDochodowy().subtract(getKwotaZmiejszajacaPodatek());
+    }
+
+    public BigDecimal getZaliczkaDoUrzeduSkarbowego()
+    {
+        return getZaliczkaNaPodatekDochodowy().subtract(skladkaZdrowotna_7_75procent).subtract(getKwotaZmiejszajacaPodatek());
+    }
+
+    public BigDecimal getPodstawaSkladkiZdrowotnej()
+    {
+        return podstawa.subtract(getSkladkaEmerytalna()).subtract(skladkaRentowa_procent).subtract(skladkaChorobowa_procent);
+    }
+
+
 }
