@@ -8,28 +8,28 @@ import java.text.DecimalFormat;
 public class TaxCalculator
 {
 
-    public double podstawaWymiaruSkladek = 0;
-    public char typUmowy = ' ';
+    private double podstawaWymiaruSkladek = 0;
+    private char typUmowy = ' ';
     // składki na ubezpieczenia społeczne
-    public double skladkaEmerytalna = 0; // 9,76% podstawyy
-    public double skladkaRentowa = 0; // 1,5% podstawy
-    public double skladkaChorobowa = 0; // 2,45% podstawy
+    private double skladkaEmerytalna = 0; // 9,76% podstawyy
+    private double skladkaRentowa = 0; // 1,5% podstawy
+    private double skladkaChorobowa = 0; // 2,45% podstawy
     // składki na ubezpieczenia zdrowotne
-    public double kosztyUzyskania = 111.25;
+    private double kosztyUzyskania = 111.25;
 
-    public double podstawaOpodatkowania;
-    public double podstawaOpodatkowania_zaokraglone;
+    private double podstawaOpodatkowania;
+    private double podstawaOpodatkowania_zaokraglone;
 
-    public double skladkaZdrowotna1 = 0; // od podstawy wymiaru 9%
-    public double skladkaZdrowotna2 = 0; // od podstawy wymiaru 7,75 %
-    public double zaliczkaNaPodatekDochodowy = 0; // zaliczka na podatek dochodowy 18%
-    public double kwotaZmiejszajacaPodatek = 46.33; // kwota zmienjszająca podatek 46,33 PLN
-    public double podatekPotracony;
-    public double zaliczkaDoUrzeduSkarbowego = 0;
-    public double zaliczkaDoUrzeduSkarbowegoFormatted = 0;
+    private double skladkaZdrowotna1 = 0; // od podstawy wymiaru 9%
+    private double skladkaZdrowotna2 = 0; // od podstawy wymiaru 7,75 %
+    private double zaliczkaNaPodatekDochodowy = 0; // zaliczka na podatek dochodowy 18%
+    private double kwotaZmiejszajacaPodatek = 46.33; // kwota zmienjszająca podatek 46,33 PLN
+    private double podatekPotracony;
+    private double zaliczkaDoUrzeduSkarbowego = 0;
+    private double zaliczkaDoUrzeduSkarbowegoFormatted = 0;
 
-    public double wynagrodzenie;
-    public double podstawaSkladkiZdrowotnej;
+    private double wynagrodzenie;
+    private double podstawaSkladkiZdrowotnej;
 
     public TaxCalculator(double podstawa, char typUmowy)
     {
@@ -62,6 +62,91 @@ public class TaxCalculator
         zaliczkaDoUrzeduSkarbowegoFormatted = Double.parseDouble(df.format(zaliczkaDoUrzeduSkarbowego));
         wynagrodzenie = podstawaWymiaruSkladek
                 - ((skladkaEmerytalna + skladkaRentowa + skladkaChorobowa) + skladkaZdrowotna1 + zaliczkaDoUrzeduSkarbowegoFormatted);
+    }
+
+    public double getPodstawaWymiaruSkladek()
+    {
+        return podstawaWymiaruSkladek;
+    }
+
+    public char getTypUmowy()
+    {
+        return typUmowy;
+    }
+
+    public double getSkladkaEmerytalna()
+    {
+        return skladkaEmerytalna;
+    }
+
+    public double getSkladkaRentowa()
+    {
+        return skladkaRentowa;
+    }
+
+    public double getSkladkaChorobowa()
+    {
+        return skladkaChorobowa;
+    }
+
+    public double getKosztyUzyskania()
+    {
+        return kosztyUzyskania;
+    }
+
+    public double getPodstawaOpodatkowania()
+    {
+        return podstawaOpodatkowania;
+    }
+
+    public double getPodstawaOpodatkowania_zaokraglone()
+    {
+        return podstawaOpodatkowania_zaokraglone;
+    }
+
+    public double getSkladkaZdrowotna1()
+    {
+        return skladkaZdrowotna1;
+    }
+
+    public double getSkladkaZdrowotna2()
+    {
+        return skladkaZdrowotna2;
+    }
+
+    public double getZaliczkaNaPodatekDochodowy()
+    {
+        return zaliczkaNaPodatekDochodowy;
+    }
+
+    public double getKwotaZmiejszajacaPodatek()
+    {
+        return kwotaZmiejszajacaPodatek;
+    }
+
+    public double getPodatekPotracony()
+    {
+        return podatekPotracony;
+    }
+
+    public double getZaliczkaDoUrzeduSkarbowego()
+    {
+        return zaliczkaDoUrzeduSkarbowego;
+    }
+
+    public double getZaliczkaDoUrzeduSkarbowegoFormatted()
+    {
+        return zaliczkaDoUrzeduSkarbowegoFormatted;
+    }
+
+    public double getWynagrodzenie()
+    {
+        return wynagrodzenie;
+    }
+
+    public double getPodstawaSkladkiZdrowotnej()
+    {
+        return podstawaSkladkiZdrowotnej;
     }
 }
 

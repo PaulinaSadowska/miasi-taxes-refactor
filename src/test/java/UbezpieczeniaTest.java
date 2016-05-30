@@ -32,32 +32,32 @@ public class UbezpieczeniaTest
     @Test
     public void ubezpieczenieEmerytalne()
     {
-        assertEquals(skladkaUbezpieczenieEmerytalne_oczekiwane, taxCalculator.skladkaEmerytalna, bias);
+        assertEquals(skladkaUbezpieczenieEmerytalne_oczekiwane, taxCalculator.getSkladkaEmerytalna(), bias);
     }
 
     @Test
     public void ubezpieczenieRentowe()
     {
-        assertEquals(skladkaUbezpieczenieRentowe_oczekiwane, taxCalculator.skladkaRentowa, bias);
+        assertEquals(skladkaUbezpieczenieRentowe_oczekiwane, taxCalculator.getSkladkaRentowa(), bias);
     }
 
     @Test
     public void ubezpieczenieChorobowe()
     {
-        assertEquals(skladkaUbezpieczenieChorobowe_oczekiwane, taxCalculator.skladkaChorobowa, bias);
+        assertEquals(skladkaUbezpieczenieChorobowe_oczekiwane, taxCalculator.getSkladkaChorobowa(), bias);
     }
 
     @Test
     public void podstawaWymiaruSkladkiUbezpieczenieZdrowotne()
     {
-        assertEquals(podstawaSkladkiZdrowotnej_oczekiwane, taxCalculator.podstawaSkladkiZdrowotnej, bias);
+        assertEquals(podstawaSkladkiZdrowotnej_oczekiwane, taxCalculator.getPodstawaSkladkiZdrowotnej(), bias);
     }
 
     @Test
     public void skladkiUbezpieczenieZdrowotne()
     {
-        assertEquals(skladkaUbezpieczenieZdrowotne_7_75procent_oczekiwane, taxCalculator.skladkaZdrowotna2, bias);
-        assertEquals(skladkaUbezpieczenieZdrowotne_9procent_oczekiwane, taxCalculator.skladkaZdrowotna1, bias);
+        assertEquals(skladkaUbezpieczenieZdrowotne_7_75procent_oczekiwane, taxCalculator.getSkladkaZdrowotna2(), bias);
+        assertEquals(skladkaUbezpieczenieZdrowotne_9procent_oczekiwane, taxCalculator.getSkladkaZdrowotna1(), bias);
     }
 
 }
