@@ -12,24 +12,15 @@ public class UmowaOPrace implements TypUmowyStrategia
         return typUmowy;
     }
 
-    public BigDecimal getKosztyUzyskania()
+    public BigDecimal getKosztyUzyskania(BigDecimal podstawaSkladkiZdrowotnej)
     {
-        return null;
+        return new BigDecimal(111.25);
     }
 
-    public BigDecimal getPodstawaOpodatkowania()
-    {
-        return null;
-    }
-
-    public BigDecimal getPodstawaOpodatkowania_zaokraglone()
-    {
-        return null;
-    }
 
     public BigDecimal getKwotaZmiejszajacaPodatek()
     {
-        return null;
+        return new BigDecimal(46.33);
     }
 
 }

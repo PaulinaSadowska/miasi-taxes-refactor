@@ -13,24 +13,14 @@ public class UmowaZlecenie implements TypUmowyStrategia
         return typUmowy;
     }
 
-    public BigDecimal getKosztyUzyskania()
+    public BigDecimal getKosztyUzyskania(BigDecimal podstawaSkladkiZdrowotnej)
     {
-        return null;
-    }
-
-    public BigDecimal getPodstawaOpodatkowania()
-    {
-        return null;
-    }
-
-    public BigDecimal getPodstawaOpodatkowania_zaokraglone()
-    {
-        return null;
+        return podstawaSkladkiZdrowotnej.multiply(new BigDecimal(0.2));
     }
 
     public BigDecimal getKwotaZmiejszajacaPodatek()
     {
-        return null;
+        return new BigDecimal(0);
     }
 
 }

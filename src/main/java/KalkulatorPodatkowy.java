@@ -1,4 +1,6 @@
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 
 /**
  * Created by Paulina Sadowska on 25.05.2016.
@@ -34,7 +36,7 @@ public class KalkulatorPodatkowy
     public BigDecimal getWynagrodzenie()
     {
         return podstawa.subtract(getSkladkaEmerytalna()).subtract(getSkladkaRentowa()).subtract(getSkladkaChorobowa())
-                .subtract(getSkladkaZdrowotna_9()).subtract(getZaliczkaDoUrzeduSkarbowego());
+                .subtract(getSkladkaZdrowotna_9()).subtract(getZaliczkaDoUrzeduSkarbowego_zaokraglone());
     }
 
     public BigDecimal getPodstawaWymiaruSkladek()
@@ -59,17 +61,17 @@ public class KalkulatorPodatkowy
 
     public BigDecimal getKosztyUzyskania()
     {
-        return typUmowyStrategia.getKosztyUzyskania();
+        return typUmowyStrategia.getKosztyUzyskania(getPodstawaSkladkiZdrowotnej());
     }
 
     public BigDecimal getPodstawaOpodatkowania()
     {
-        return typUmowyStrategia.getPodstawaOpodatkowania();
+        return getPodstawaSkladkiZdrowotnej().subtract(getKosztyUzyskania());
     }
 
     public BigDecimal getPodstawaOpodatkowania_zaokraglone()
     {
-        return typUmowyStrategia.getPodstawaOpodatkowania_zaokraglone();
+        return getPodstawaOpodatkowania().setScale(0, RoundingMode.HALF_UP);
     }
 
     public BigDecimal getSkladkaZdrowotna_9()
@@ -99,13 +101,19 @@ public class KalkulatorPodatkowy
 
     public BigDecimal getZaliczkaDoUrzeduSkarbowego()
     {
-        return getZaliczkaNaPodatekDochodowy().subtract(skladkaZdrowotna_7_75procent).subtract(getKwotaZmiejszajacaPodatek());
+        return getZaliczkaNaPodatekDochodowy().subtract(getSkladkaZdrowotna_7_75()).subtract(getKwotaZmiejszajacaPodatek());
+    }
+
+    public BigDecimal getZaliczkaDoUrzeduSkarbowego_zaokraglone()
+    {
+        return getZaliczkaDoUrzeduSkarbowego().setScale(0, RoundingMode.HALF_UP);
     }
 
     public BigDecimal getPodstawaSkladkiZdrowotnej()
     {
-        return podstawa.subtract(getSkladkaEmerytalna()).subtract(skladkaRentowa_procent).subtract(skladkaChorobowa_procent);
+        return podstawa.subtract(getSkladkaEmerytalna()).subtract(getSkladkaRentowa()).subtract(getSkladkaChorobowa());
     }
+
 
 
 }

@@ -4,7 +4,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import original.TaxCalculator;
-import original.TaxCalculator;
+
+import java.math.BigDecimal;
 
 /**
  * Created by Paulina Sadowska on 20.05.2016.
@@ -14,8 +15,8 @@ public class UmowaOPracePodatkiTest
 
     private final double bias = 0.02;
 
-    private final char typUmowy = 'P';
-    private final double podstawaWymiaruSkladek = 3000;
+    private final TypUmowy typUmowy = TypUmowy.umowaOPrace;
+    private final BigDecimal podstawaWymiaruSkladek = new BigDecimal(3000);
 
     private final double kosztyUzyskaniaPrzychodu_oczekiwane = 111.25;
     private final double podstawaOpodatkowania_oczekiwane = 2477.45;
@@ -24,23 +25,22 @@ public class UmowaOPracePodatkiTest
     private final double kwotaWolnaOdPodatku_oczekiwane = 46.33;
     private final double podatekPotracony_oczekiwane = 399.53;
     private final double zaliczkaDoUrzeduSkarbowego_oczekiwane = 198.91;
-    private final double zaliczkaDoUrzeduSkarbowegoZaokraglony_oczekiwane = 199;
     private final double wynagrodzenieNetto_oczekiwane = 2156.72;
 
-    private TaxCalculator taxCalculator;
+    private KalkulatorPodatkowy taxCalculator;
 
 
     @Before
     public void setUp()
     {
-        taxCalculator = new TaxCalculator(podstawaWymiaruSkladek, typUmowy);
+        taxCalculator = new KalkulatorPodatkowy(podstawaWymiaruSkladek, typUmowy);
     }
 
     @Test
     public void inicjalizacjaKalkulatora_ustawionoDobryTypUmowyIPodstaweWymiaruSkladek()
     {
-        TaxCalculator taxCalculator1 = new TaxCalculator(podstawaWymiaruSkladek, typUmowy);
-        assertEquals(podstawaWymiaruSkladek, taxCalculator1.getPodstawaWymiaruSkladek(), bias);
+        KalkulatorPodatkowy taxCalculator1 = new KalkulatorPodatkowy(podstawaWymiaruSkladek, typUmowy);
+        assertEquals(podstawaWymiaruSkladek, taxCalculator1.getPodstawaWymiaruSkladek());
         assertEquals(typUmowy, taxCalculator1.getTypUmowy());
     }
 
@@ -48,35 +48,34 @@ public class UmowaOPracePodatkiTest
     @Test
     public void wynagrodzenieNetto()
     {
-        assertEquals(wynagrodzenieNetto_oczekiwane, taxCalculator.getWynagrodzenie(), bias);
+        assertEquals(wynagrodzenieNetto_oczekiwane, taxCalculator.getWynagrodzenie().doubleValue(), bias);
     }
 
     @Test
     public void kosztyUzyskaniaPrzychodu()
     {
-        assertEquals(kosztyUzyskaniaPrzychodu_oczekiwane, taxCalculator.getKosztyUzyskania(), bias);
+        assertEquals(kosztyUzyskaniaPrzychodu_oczekiwane, taxCalculator.getKosztyUzyskania().doubleValue(), bias);
     }
 
     @Test
     public void podstawaOpodatkowania()
     {
-        assertEquals(podstawaOpodatkowania_oczekiwane, taxCalculator.getPodstawaOpodatkowania(), bias);
-        assertEquals(podstawaOpodatkowaniaZaokraglona_oczekiwane, taxCalculator.getPodstawaOpodatkowania_zaokraglone(), bias);
+        assertEquals(podstawaOpodatkowania_oczekiwane, taxCalculator.getPodstawaOpodatkowania().doubleValue(), bias);
+        assertEquals(podstawaOpodatkowaniaZaokraglona_oczekiwane, taxCalculator.getPodstawaOpodatkowania_zaokraglone().doubleValue(), bias);
     }
 
     @Test
     public void podatekDochodowy()
     {
-        assertEquals(zaliczkaPodatekDochodowy_oczekiwane, taxCalculator.getZaliczkaNaPodatekDochodowy(), bias);
-        assertEquals(kwotaWolnaOdPodatku_oczekiwane, taxCalculator.getKwotaZmiejszajacaPodatek(), bias);
-        assertEquals(podatekPotracony_oczekiwane, taxCalculator.getPodatekPotracony(), bias);
+        assertEquals(zaliczkaPodatekDochodowy_oczekiwane, taxCalculator.getZaliczkaNaPodatekDochodowy().doubleValue(), bias);
+        assertEquals(kwotaWolnaOdPodatku_oczekiwane, taxCalculator.getKwotaZmiejszajacaPodatek().doubleValue(), bias);
+        assertEquals(podatekPotracony_oczekiwane, taxCalculator.getPodatekPotracony().doubleValue(), bias);
     }
 
     @Test
     public void urzadSkarbowy()
     {
-        assertEquals(zaliczkaDoUrzeduSkarbowego_oczekiwane, taxCalculator.getZaliczkaDoUrzeduSkarbowego(), bias);
-        assertEquals(zaliczkaDoUrzeduSkarbowegoZaokraglony_oczekiwane, taxCalculator.getZaliczkaDoUrzeduSkarbowegoFormatted(), bias);
+        assertEquals(zaliczkaDoUrzeduSkarbowego_oczekiwane, taxCalculator.getZaliczkaDoUrzeduSkarbowego().doubleValue(), bias);
     }
 
 

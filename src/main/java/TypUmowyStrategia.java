@@ -7,8 +7,6 @@ public interface TypUmowyStrategia
 {
 
     TypUmowy getTypUmowy();
-    BigDecimal getKosztyUzyskania();
-    BigDecimal getPodstawaOpodatkowania();
-    BigDecimal getPodstawaOpodatkowania_zaokraglone();
+    BigDecimal getKosztyUzyskania(BigDecimal podstawaSkladkiZdrowotnej);
     BigDecimal getKwotaZmiejszajacaPodatek();
 }

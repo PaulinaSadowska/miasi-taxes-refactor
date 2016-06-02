@@ -15,7 +15,7 @@ public class TaxCalculator
     private double skladkaRentowa = 0; // 1,5% podstawy
     private double skladkaChorobowa = 0; // 2,45% podstawy
     // składki na ubezpieczenia zdrowotne
-    private double kosztyUzyskania = 111.25;
+    private double kosztyUzyskania = 0;
 
     private double podstawaOpodatkowania;
     private double podstawaOpodatkowania_zaokraglone;
@@ -23,7 +23,7 @@ public class TaxCalculator
     private double skladkaZdrowotna1 = 0; // od podstawy wymiaru 9%
     private double skladkaZdrowotna2 = 0; // od podstawy wymiaru 7,75 %
     private double zaliczkaNaPodatekDochodowy = 0; // zaliczka na podatek dochodowy 18%
-    private double kwotaZmiejszajacaPodatek = 46.33; // kwota zmienjszająca podatek 46,33 PLN
+    private double kwotaZmiejszajacaPodatek = 0; // kwota zmienjszająca podatek 46,33 PLN
     private double podatekPotracony;
     private double zaliczkaDoUrzeduSkarbowego = 0;
     private double zaliczkaDoUrzeduSkarbowegoFormatted = 0;
@@ -47,14 +47,14 @@ public class TaxCalculator
         skladkaZdrowotna2 = (podstawaSkladkiZdrowotnej * 7.75) / 100;
         if (typUmowy == 'P')
         {
-            podstawaOpodatkowania = podstawaSkladkiZdrowotnej - kosztyUzyskania;
+            kwotaZmiejszajacaPodatek = 46.33;
+            kosztyUzyskania = 111.25;
         } else if (typUmowy == 'Z')
         {
             kwotaZmiejszajacaPodatek = 0;
-            podstawaOpodatkowania = podstawaSkladkiZdrowotnej;
-            kosztyUzyskania = (podstawaOpodatkowania * 20) / 100;
-            podstawaOpodatkowania = podstawaOpodatkowania - kosztyUzyskania;
+            kosztyUzyskania = (podstawaSkladkiZdrowotnej * 20) / 100;
         }
+        podstawaOpodatkowania = podstawaSkladkiZdrowotnej - kosztyUzyskania;
         podstawaOpodatkowania_zaokraglone = Double.parseDouble(df.format(podstawaOpodatkowania));
         zaliczkaNaPodatekDochodowy = (podstawaOpodatkowania_zaokraglone * 18) / 100;
         podatekPotracony = zaliczkaNaPodatekDochodowy - kwotaZmiejszajacaPodatek;
