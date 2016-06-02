@@ -32,6 +32,8 @@ public class UbezpieczeniaTest
     public void setUp()
     {
         taxCalculator = new KalkulatorPodatkowy(podstawaWymiaruSkladek, typUmowy);
+        Printer p = new Printer(taxCalculator);
+        p.print();
     }
 
 

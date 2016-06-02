@@ -7,6 +7,7 @@ public class UmowaZlecenie implements TypUmowyStrategia
 {
 
     private final TypUmowy typUmowy = TypUmowy.umowaZlecenie;
+    private static final BigDecimal kosztyUzyskania_procent = new BigDecimal(0.2);
 
     public TypUmowy getTypUmowy()
     {
@@ -15,7 +16,7 @@ public class UmowaZlecenie implements TypUmowyStrategia
 
     public BigDecimal getKosztyUzyskania(BigDecimal podstawaSkladkiZdrowotnej)
     {
-        return podstawaSkladkiZdrowotnej.multiply(new BigDecimal(0.2));
+        return podstawaSkladkiZdrowotnej.multiply(kosztyUzyskania_procent);
     }
 
     public BigDecimal getKwotaZmiejszajacaPodatek()
