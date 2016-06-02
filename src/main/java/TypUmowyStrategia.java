@@ -5,7 +5,6 @@ import java.math.BigDecimal;
  */
 public interface TypUmowyStrategia
 {
-
     TypUmowy getTypUmowy();
     BigDecimal getKosztyUzyskania(BigDecimal podstawaSkladkiZdrowotnej);
     BigDecimal getKwotaZmiejszajacaPodatek();

@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619f3baf-33bc-4c8d-b526-673ac8728a37" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUbezpieczeniaTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUmowaOPracePodatkiTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUmowaZleceniePodatkiTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/RodzajUmowy.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/KalkulatorPodatkowy.class" afterPath="$PROJECT_DIR$/target/classes/KalkulatorPodatkowy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/UmowaOPrace.class" afterPath="$PROJECT_DIR$/target/classes/UmowaOPrace.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/UmowaZlecenie.class" afterPath="$PROJECT_DIR$/target/classes/UmowaZlecenie.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/original/TaxCalculator.class" afterPath="$PROJECT_DIR$/target/classes/original/TaxCalculator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/UbezpieczeniaTest.class" afterPath="$PROJECT_DIR$/target/test-classes/UbezpieczeniaTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/UmowaOPracePodatkiTest.class" afterPath="$PROJECT_DIR$/target/test-classes/UmowaOPracePodatkiTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/UmowaZleceniePodatkiTest.class" afterPath="$PROJECT_DIR$/target/test-classes/UmowaZleceniePodatkiTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/KalkulatorPodatkowy.java" afterPath="$PROJECT_DIR$/src/main/java/KalkulatorPodatkowy.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUbezpieczeniaTest.java" afterPath="$PROJECT_DIR$/src/test/java/original/OriginalUbezpieczeniaTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUmowaOPracePodatkiTest.java" afterPath="$PROJECT_DIR$/src/test/java/original/OriginalUmowaOPracePodatkiTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUmowaZleceniePodatkiTest.java" afterPath="$PROJECT_DIR$/src/test/java/original/OriginalUmowaZleceniePodatkiTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/TypUmowyStrategia.java" afterPath="$PROJECT_DIR$/src/main/java/TypUmowyStrategia.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/UmowaOPrace.java" afterPath="$PROJECT_DIR$/src/main/java/UmowaOPrace.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/UmowaZlecenie.java" afterPath="$PROJECT_DIR$/src/main/java/UmowaZlecenie.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/original/TaxCalculator.java" afterPath="$PROJECT_DIR$/src/main/java/original/TaxCalculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/UbezpieczeniaTest.java" afterPath="$PROJECT_DIR$/src/test/java/UbezpieczeniaTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/UmowaOPracePodatkiTest.java" afterPath="$PROJECT_DIR$/src/test/java/UmowaOPracePodatkiTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/UmowaZleceniePodatkiTest.java" afterPath="$PROJECT_DIR$/src/test/java/UmowaZleceniePodatkiTest.java" />
     </list>
     <ignored path="miasi-taxes-refactor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,10 +48,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KalkulatorPodatkowy.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KalkulatorPodatkowy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/KalkulatorPodatkowy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6052632">
+            <state vertical-scroll-proportion="25.296297">
               <caret line="38" column="103" selection-start-line="38" selection-start-column="103" selection-end-line="38" selection-end-column="103" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -78,6 +62,16 @@
                 <element signature="e#1888#1889#0" expanded="true" />
                 <element signature="e#1954#1955#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TypUmowyStrategia.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TypUmowyStrategia.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,10 +109,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaxCalculatorLonger.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TaxCalculatorLonger.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/original/TaxCalculatorLonger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-1.3685153">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
@@ -177,7 +171,6 @@
         <option value="$PROJECT_DIR$/src/main/java/TypUmowy.java" />
         <option value="$PROJECT_DIR$/src/main/java/original/TaxCalculator.java" />
         <option value="$PROJECT_DIR$/src/main/java/UmowaZlecenie.java" />
-        <option value="$PROJECT_DIR$/src/main/java/TypUmowyStrategia.java" />
         <option value="$PROJECT_DIR$/src/main/java/UmowaOPrace.java" />
         <option value="$PROJECT_DIR$/src/test/java/TaxCalculator/UmowaZleceniePodatkiTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/TaxCalculatorTest/UmowaZleceniePodatkiTest.java" />
@@ -189,6 +182,7 @@
         <option value="$PROJECT_DIR$/src/test/java/UmowaZleceniePodatkiTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/UmowaOPracePodatkiTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/KalkulatorPodatkowy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TypUmowyStrategia.java" />
       </list>
     </option>
   </component>
@@ -313,32 +307,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miasi-taxes-refactor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miasi-taxes-refactor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="original" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -436,8 +404,8 @@
       <module name="miasi-taxes-refactor" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="TaxCalculatorTest" />
-      <option name="MAIN_CLASS_NAME" value="TaxCalculatorTest.OriginalUbezpieczeniaTest" />
+      <option name="PACKAGE_NAME" value="original" />
+      <option name="MAIN_CLASS_NAME" value="original.OriginalUbezpieczeniaTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -728,7 +696,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="23" width="1429" height="877" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32356688" sideWeight="0.44844988" order="7" side_tool="false" content_ui="tabs" />
@@ -736,10 +704,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32611465" sideWeight="0.5515501" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2522293" sideWeight="0.45133382" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2522293" sideWeight="0.45133382" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24945927" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24945927" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -887,7 +855,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUbezpieczeniaTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/original/OriginalUbezpieczeniaTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="59" column="109" selection-start-line="59" selection-start-column="109" selection-end-line="59" selection-end-column="109" />
@@ -897,7 +865,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUmowaZleceniePodatkiTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/original/OriginalUmowaZleceniePodatkiTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
@@ -915,7 +883,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUbezpieczeniaTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/original/OriginalUbezpieczeniaTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="59" column="109" selection-start-line="59" selection-start-column="109" selection-end-line="59" selection-end-column="109" />
@@ -925,7 +893,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUmowaZleceniePodatkiTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/original/OriginalUmowaZleceniePodatkiTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
@@ -943,14 +911,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUmowaOPracePodatkiTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/original/OriginalUmowaOPracePodatkiTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUmowaZleceniePodatkiTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/original/OriginalUmowaZleceniePodatkiTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
@@ -960,7 +928,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUbezpieczeniaTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/original/OriginalUbezpieczeniaTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
@@ -978,14 +946,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUmowaOPracePodatkiTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/original/OriginalUmowaOPracePodatkiTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="46" selection-start-line="40" selection-start-column="0" selection-end-line="46" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUmowaZleceniePodatkiTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/original/OriginalUmowaZleceniePodatkiTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1016,7 +984,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUmowaZleceniePodatkiTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/original/OriginalUmowaZleceniePodatkiTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27108434">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
@@ -1026,7 +994,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUmowaOPracePodatkiTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/original/OriginalUmowaOPracePodatkiTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15060242">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
@@ -1034,15 +1002,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TypUmowyStrategia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TaxCalculatorTest/OriginalUbezpieczeniaTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/original/OriginalUbezpieczeniaTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.13416816">
           <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
@@ -1070,25 +1030,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/original/TaxCalculatorLonger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/UmowaOPrace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="77" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
-          <folding>
-            <element signature="e#356#357#0" expanded="true" />
-            <element signature="e#401#402#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/UmowaZleceniePodatkiTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1105,17 +1046,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/original/TaxCalculator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/UmowaOPrace.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="124" selection-start-line="63" selection-start-column="124" selection-end-line="63" selection-end-column="124" />
+          <caret line="14" column="77" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
+          <folding>
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TypUmowyStrategia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/KalkulatorPodatkowy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6052632">
+        <state vertical-scroll-proportion="25.296297">
           <caret line="38" column="103" selection-start-line="38" selection-start-column="103" selection-end-line="38" selection-end-column="103" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1126,6 +1078,22 @@
             <element signature="e#1888#1889#0" expanded="true" />
             <element signature="e#1954#1955#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/original/TaxCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="124" selection-start-line="63" selection-start-column="124" selection-end-line="63" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/original/TaxCalculatorLonger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3685153">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,8 +1,7 @@
-package TaxCalculatorTest;
+package original;
 
 import org.junit.Before;
 import org.junit.Test;
-import original.TaxCalculator;
 
 import static org.junit.Assert.assertEquals;
 

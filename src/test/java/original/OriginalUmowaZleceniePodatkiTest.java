@@ -1,32 +1,29 @@
-package TaxCalculatorTest;
+package original;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-import original.TaxCalculator;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Paulina Sadowska on 20.05.2016.
  */
-public class OriginalUmowaOPracePodatkiTest
+public class OriginalUmowaZleceniePodatkiTest
 {
-
     private final double bias = 0.02;
 
-    private final char typUmowy = 'P';
+    private final char typUmowy = 'Z';
     private final double podstawaWymiaruSkladek = 3000;
 
-    private final double kosztyUzyskaniaPrzychodu_oczekiwane = 111.25;
-    private final double podstawaOpodatkowania_oczekiwane = 2477.45;
-    private final double podstawaOpodatkowaniaZaokraglona_oczekiwane = 2477;
-    private final double zaliczkaPodatekDochodowy_oczekiwane = 445.86;
-    private final double kwotaWolnaOdPodatku_oczekiwane = 46.33;
-    private final double podatekPotracony_oczekiwane = 399.53;
-    private final double zaliczkaDoUrzeduSkarbowego_oczekiwane = 198.91;
-    private final double zaliczkaDoUrzeduSkarbowegoZaokraglony_oczekiwane = 199;
-    private final double wynagrodzenieNetto_oczekiwane = 2156.72;
+    //INNE
+    private final double kosztyUzyskaniaPrzychodu_oczekiwane = 517.74;
+    private final double podstawaOpodatkowania_oczekiwane = 2070.96;
+    private final double podstawaOpodatkowaniaZaokraglona_oczekiwane = 2071;
+    private final double zaliczkaPodatekDochodowy_oczekiwane = 372.78;
+    private final double podatekPotracony_oczekiwane = 372.78;
+    private final double zaliczkaDoUrzeduSkarbowego_oczekiwane = 172.16;
+    private final double zaliczkaDoUrzeduSkarbowegoZaokraglony_oczekiwane = 172;
+    private final double wynagrodzenieNetto_oczekiwane = 2183.72;
 
     private TaxCalculator taxCalculator;
 
@@ -44,7 +41,6 @@ public class OriginalUmowaOPracePodatkiTest
         assertEquals(podstawaWymiaruSkladek, taxCalculator1.getPodstawaWymiaruSkladek(), bias);
         assertEquals(typUmowy, taxCalculator1.getTypUmowy());
     }
-
 
     @Test
     public void wynagrodzenieNetto()
@@ -69,7 +65,6 @@ public class OriginalUmowaOPracePodatkiTest
     public void podatekDochodowy()
     {
         assertEquals(zaliczkaPodatekDochodowy_oczekiwane, taxCalculator.getZaliczkaNaPodatekDochodowy(), bias);
-        assertEquals(kwotaWolnaOdPodatku_oczekiwane, taxCalculator.getKwotaZmiejszajacaPodatek(), bias);
         assertEquals(podatekPotracony_oczekiwane, taxCalculator.getPodatekPotracony(), bias);
     }
 
@@ -79,6 +74,4 @@ public class OriginalUmowaOPracePodatkiTest
         assertEquals(zaliczkaDoUrzeduSkarbowego_oczekiwane, taxCalculator.getZaliczkaDoUrzeduSkarbowego(), bias);
         assertEquals(zaliczkaDoUrzeduSkarbowegoZaokraglony_oczekiwane, taxCalculator.getZaliczkaDoUrzeduSkarbowegoFormatted(), bias);
     }
-
-
 }
