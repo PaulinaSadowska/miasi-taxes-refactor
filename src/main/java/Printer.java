@@ -1,21 +1,47 @@
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /**
  * Created by Paulina Sadowska on 02.06.2016.
  */
 public class Printer
 {
-
     private KalkulatorPodatkowy kalkulatorPodatkowy;
+    private Formatter f = new Formatter();
 
     public Printer(KalkulatorPodatkowy kalkulatorPodatkowy){
         this.kalkulatorPodatkowy = kalkulatorPodatkowy;
     }
 
-    public void print(){
+    public void print()
+    {
+        /*Method[] methods = this.getClass().getDeclaredMethods(); // zla kolejnosc :(
+        for (Method method : methods)
+        {
+            if(!method.getReturnType().equals(Void.TYPE)){
+                System.out.println(method.invoke(this, null));
+            }
+        }*/
         System.out.println(typUmowy());
         System.out.println(podstawaWymiaruSkladek());
+        System.out.println(skladkaEmerytalna());
+        System.out.println(skladkaRentowa());
+        System.out.println(skladkaChorobowa());
+        System.out.println(podstawaSkladkiZdrowotnej());
+        System.out.println(skladkaZdrowotna());
+        System.out.println(kosztyUzyskania());
+        System.out.println(podstawaOpodatkowania());
+        System.out.println(zaliczkaNaPodatekDochodowy());
+        System.out.println(kwotaZmiejszajacaPodatek());
+        System.out.println(podatekPotracony());
+        System.out.println(zaliczkaDoUrzeduSkarbowego());
+        System.out.println(wynagrodzenie());
+
     }
 
-    public String typUmowy(){
+    private String typUmowy(){
         if(kalkulatorPodatkowy.getTypUmowy() == TypUmowy.umowaOPrace){
             return "UMOWA O PRACĘ";
         }
@@ -25,59 +51,59 @@ public class Printer
         return null;
     }
 
-    public String podstawaWymiaruSkladek(){
-        return "Podstawa wymiaru składek " + kalkulatorPodatkowy.getPodstawaWymiaruSkladek();
+    private String podstawaWymiaruSkladek(){
+        return "Podstawa wymiaru składek " + f.format(kalkulatorPodatkowy.getPodstawaWymiaruSkladek());
     }
 
-    public String skladkaEmerytalna(){
-        return "Składka na ubezpieczenie emerytalne " + kalkulatorPodatkowy.getSkladkaEmerytalna();
+    private String skladkaEmerytalna(){
+        return "Składka na ubezpieczenie emerytalne " + f.format(kalkulatorPodatkowy.getSkladkaEmerytalna());
     }
 
     public String skladkaRentowa(){
-        return "Składka na ubezpieczenie rentowe " + kalkulatorPodatkowy.getSkladkaRentowa();
+        return "Składka na ubezpieczenie rentowe " + f.format(kalkulatorPodatkowy.getSkladkaRentowa());
     }
 
-    public String skladkaChorobowa(){
-        return "Składka na ubezpieczenie chorobowe " + kalkulatorPodatkowy.getSkladkaChorobowa();
+    private String skladkaChorobowa(){
+        return "Składka na ubezpieczenie chorobowe " + f.format(kalkulatorPodatkowy.getSkladkaChorobowa());
     }
 
-    public String podstawaSkladkiZdrowotnej(){
-        return "Podstawa wymiaru składki na ubezpieczenie zdrowotne: " + kalkulatorPodatkowy.getPodstawaSkladkiZdrowotnej();
+    private String podstawaSkladkiZdrowotnej(){
+        return "Podstawa wymiaru składki na ubezpieczenie zdrowotne: " + f.format(kalkulatorPodatkowy.getPodstawaSkladkiZdrowotnej());
     }
 
-    public String skladkaZdrowotna(){
-        return "Składka na ubezpieczenie zdrowotne: 9% = " + kalkulatorPodatkowy.getSkladkaZdrowotna_9() +
-        " 7,75% = " + kalkulatorPodatkowy.getSkladkaZdrowotna_7_75();
+    private String skladkaZdrowotna(){
+        return "Składka na ubezpieczenie zdrowotne: 9% = " + f.format(kalkulatorPodatkowy.getSkladkaZdrowotna_9()) +
+        " 7,75% = " + f.format(kalkulatorPodatkowy.getSkladkaZdrowotna_7_75());
     }
 
-    public String kosztyUzyskania(){
-        return "Koszty uzyskania przychodu w stałej wysokości " + kalkulatorPodatkowy.getKosztyUzyskania();
+    private String kosztyUzyskania(){
+        return "Koszty uzyskania przychodu w stałej wysokości " + f.format(kalkulatorPodatkowy.getKosztyUzyskania());
     }
 
-    public String podstawaOpodatkowania(){
-        return "Podstawa opodatkowania " + kalkulatorPodatkowy.getPodstawaOpodatkowania() +
-                " zaokrąglona " + kalkulatorPodatkowy.getPodstawaOpodatkowania_zaokraglone();
+    private String podstawaOpodatkowania(){
+        return "Podstawa opodatkowania " + f.format(kalkulatorPodatkowy.getPodstawaOpodatkowania()) +
+                " zaokrąglona " + f.format(kalkulatorPodatkowy.getPodstawaOpodatkowania_zaokraglone());
     }
 
-    public String zaliczkaNaPodatekDochodowy(){
-        return "Zaliczka na podatek dochodowy 18 % = " + kalkulatorPodatkowy.getZaliczkaNaPodatekDochodowy();
+    private String zaliczkaNaPodatekDochodowy(){
+        return "Zaliczka na podatek dochodowy 18 % = " + f.format(kalkulatorPodatkowy.getZaliczkaNaPodatekDochodowy());
     }
 
-    public String kwotaZmiejszajacaPodatek(){
-        return "Kwota wolna od podatku = " + kalkulatorPodatkowy.getKwotaZmiejszajacaPodatek();
+    private String kwotaZmiejszajacaPodatek(){
+        return "Kwota wolna od podatku = " + f.format(kalkulatorPodatkowy.getKwotaZmiejszajacaPodatek());
     }
 
-    public String podatekPotracony(){
-        return "Podatek potrącony = " + kalkulatorPodatkowy.getPodatekPotracony();
+    private String podatekPotracony(){
+        return "Podatek potrącony = " + f.format(kalkulatorPodatkowy.getPodatekPotracony());
     }
 
-    public String zaliczkaDoUrzeduSkarbowego(){
-        return "Zaliczka do urzędu skarbowego = " + kalkulatorPodatkowy.getZaliczkaDoUrzeduSkarbowego()
-                + " po zaokrągleniu = " + kalkulatorPodatkowy.getZaliczkaDoUrzeduSkarbowego_zaokraglone();
+    private String zaliczkaDoUrzeduSkarbowego(){
+        return "Zaliczka do urzędu skarbowego = " + f.format(kalkulatorPodatkowy.getZaliczkaDoUrzeduSkarbowego())
+                + " po zaokrągleniu = " + f.format(kalkulatorPodatkowy.getZaliczkaDoUrzeduSkarbowego_zaokraglone());
     }
 
-    public String wynagrodzenie(){
-        return "Pracownik otrzyma wynagrodzenie netto w wysokości = " + kalkulatorPodatkowy.getWynagrodzenie();
+    private String wynagrodzenie(){
+        return "Pracownik otrzyma wynagrodzenie netto w wysokości = " + f.format(kalkulatorPodatkowy.getWynagrodzenie());
     }
 
 }

@@ -2,6 +2,7 @@ import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIGlobalBinding;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
@@ -32,13 +33,11 @@ public class UbezpieczeniaTest
     public void setUp()
     {
         taxCalculator = new KalkulatorPodatkowy(podstawaWymiaruSkladek, typUmowy);
-        Printer p = new Printer(taxCalculator);
-        p.print();
     }
 
 
     @Test
-    public void ubezpieczenieEmerytalne()
+    public void ubezpieczenieEmerytalne()  throws InvocationTargetException, IllegalAccessException
     {
         assertEquals(skladkaUbezpieczenieEmerytalne_oczekiwane, taxCalculator.getSkladkaEmerytalna().doubleValue(), bias);
     }
