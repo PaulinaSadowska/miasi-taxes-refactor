@@ -21,18 +21,24 @@ public class Main
             kwotaDochodu = new BigDecimal(Double.parseDouble(br.readLine()));
             System.out.print("Typ umowy: (P)raca, (Z)lecenie: ");
             typUmowy = getTypUmowy(br.readLine().charAt(0));
+            if (typUmowy != null)
+            {
+                KalkulatorPodatkowy kalkulatorPodatkowy = new KalkulatorPodatkowy(kwotaDochodu, typUmowy);
+                Printer printer = new Printer(kalkulatorPodatkowy);
+                printer.print();
+            }
+            else{
+                System.out.println("Podano niewłaściwy typ umowy");
+            }
+
+        }
+        catch(NumberFormatException e){
+            System.out.println("Podano niewłaściwą wartość wynagrodzenia");
         }
         catch (IOException e)
         {
             e.printStackTrace();
         }
-        if (typUmowy != null)
-        {
-            KalkulatorPodatkowy kalkulatorPodatkowy = new KalkulatorPodatkowy(kwotaDochodu, typUmowy);
-            Printer printer = new Printer(kalkulatorPodatkowy);
-            printer.print();
-        }
-
     }
 
     private static TypUmowy getTypUmowy(char typUmowy)
