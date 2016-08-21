@@ -1,3 +1,5 @@
+#Refectoring exercise
+
 The goal was to eliminate the following code smells:
 
 - duplicated code
